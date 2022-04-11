@@ -1,0 +1,11 @@
+// **************************************
+// @Grid: grid
+// **************************************
+
+// Grid de 4 columnas y 3 filas
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 50px;
+}

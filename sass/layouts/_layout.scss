@@ -1,0 +1,52 @@
+// **************************************
+// @Layout: layout
+// **************************************
+
+// Definición global
+body{
+    background-color: $colorFondo;
+    color: $colorTexto;
+}
+
+// Contenedor
+.contenedor{
+    width: 80vw;
+    margin: 0 auto;
+}
+.titulo{
+    grid-column: 1/5;
+    justify-self: center;
+}
+
+// Creación de las polaroid en diferentes colores
+// Utilizar un bucle "each"
+@each $color, $fondoPolaroid in $colores {
+    // Crear la polaroid
+    .polaroid{
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        border-top: 10px solid #fff;
+        border-left: 10px solid #fff;
+        border-right: 10px solid #fff;
+
+        // fondo
+        &--#{$color}{
+            background-color: $fondoPolaroid;
+
+            // Texto de las polaroid
+            .texto {
+                background-color: #fff;
+                padding: 5px 0;
+                text-align: center;
+                &::before{
+                    content: "#{$fondoPolaroid}";
+                }
+            }
+        }
+
+    }
+}
